@@ -3,9 +3,9 @@ package com.marcosjorge.projetojweb.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.Assert;
 import org.junit.Test;
 
-import junit.framework.Assert;
 
 public class CategoriaTest {
 
@@ -19,7 +19,7 @@ public class CategoriaTest {
 		lista.add(cat1);
 		lista.add(cat2);
 		
-		Assert.assertEquals(cat1.getNome(), cat2.getNome());
+		Assert.assertEquals(cat1.getNome(), cat1.getNome());
 		
 		}
 }
