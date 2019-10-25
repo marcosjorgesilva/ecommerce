@@ -1,15 +1,16 @@
 package dbUnit;
 
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
 import javax.swing.JOptionPane;
 
-import org.dbunit.database.*;
-import org.dbunit.dataset.*;
+import org.dbunit.database.DatabaseConnection;
+import org.dbunit.database.IDatabaseConnection;
+import org.dbunit.dataset.IDataSet;
 import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
 import org.dbunit.operation.DatabaseOperation;
-import org.dbunit.util.Base64.InputStream;
 
 public class DbUnitProvider {
 
@@ -29,11 +30,10 @@ public class DbUnitProvider {
 		
 		// Imputando as informações de conexão para a classe de conexão do DbUnit
 		IDatabaseConnection iConn = new DatabaseConnection(conn);
+		
 		// Lendo os dados do xml
-					
 		InputStream stream = (InputStream) getClass().getResourceAsStream(xml);
 		FlatXmlDataSetBuilder builder = new FlatXmlDataSetBuilder();
-		JOptionPane.showInputDialog(stream, "ok");
 		IDataSet dataSet = builder.build(stream);
 		
 		operation.execute(iConn, dataSet);

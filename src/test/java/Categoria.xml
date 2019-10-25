@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding = "UTF-8"?>
 
 <dataset>
-	<Categoria id="1" nome="camisa"/>
-	<Categoria id="2" nome="camisetas"/>
-	<Categoria id="3" nome="polos"/>
-	<Categoria id="4" nome="cuecas"/>
-	<Categoria id="5" nome="casacos e jaquetas"/>
-	<Categoria id="6" nome="calças"/>
-	<Categoria id="7" nome="calças jeans"/>
+	<CATEGORIA nome="camisa"/>
+	<CATEGORIA nome="camisetas"/>
+	<CATEGORIA nome="polos"/>
+	<CATEGORIA nome="cuecas"/>
+	<CATEGORIA nome="casacos e jaquetas"/>
+	<CATEGORIA nome="calças"/>
+	<CATEGORIA nome="calças jeans"/>
 </dataset>

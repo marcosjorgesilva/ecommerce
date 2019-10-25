@@ -1,6 +1,7 @@
 package com.marcosjorge.projetojweb.domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -20,13 +21,15 @@ public class Estado implements Serializable{
 	private String nome;
 
 	@ManyToMany(mappedBy = "estado")
-	private List<Cidade> cidades;
+	private List<Cidade> cidades = new ArrayList<>();
 	
-	public Estado(Integer id, String nome, List<Cidade> cidades) {
+	public Estado() {
+	}
+	
+	public Estado(Integer id, String nome) {
 		super();
 		this.id = id;
 		this.nome = nome;
-		this.cidades = cidades;
 	}
 
 	public Integer getId() {
@@ -77,6 +80,5 @@ public class Estado implements Serializable{
 			return false;
 		return true;
 	}
-	
-	
+
 }
