@@ -13,7 +13,8 @@ import org.dbunit.operation.DatabaseOperation;
 public class DbUnitProvider {
 
 	public void execute(DatabaseOperation operation, String xml){
-		// Definindo JDBC driver e a URL do banco
+			
+		//Criando a nova instancia e Definindo a conexão com a base
 		String JDBC_DRIVER = "org.h2.Driver";   
 		String DB_URL = "jdbc:h2:mem:testdb";  
 		   
@@ -42,3 +43,4 @@ public class DbUnitProvider {
 		}
 	}
 }
+

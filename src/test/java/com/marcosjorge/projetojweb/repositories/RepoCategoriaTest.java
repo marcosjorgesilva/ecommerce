@@ -13,18 +13,19 @@ public class RepoCategoriaTest {
 	
 	@Before
 	public void inserirDados() {
-		dbUnitProvider.execute(DatabaseOperation.DELETE_ALL, "/Categoria.xml");
-		dbUnitProvider.execute(DatabaseOperation.INSERT, "/Categoria.xml");
-	}
-	/*
-	@After 
-	public void apagarDados() {
-		dbUnitProvider.execute(DatabaseOperation.DELETE_ALL, "/Categoria.xml");
-	}
-	*/
-	@Test
-	public void VerificarCargaPorId() {
-		assertNotNull("Encontrado!",new Object());
+		dbUnitProvider.execute(DatabaseOperation.DELETE_ALL, "categoria.xml");
+		dbUnitProvider.execute(DatabaseOperation.INSERT, "categoria.xml");
 	}
 
+	@Test
+	public void VerificarCargaPorId() {
+		//assertNotNull("Encontrado!",new Object());
+	}
+
+	@After 
+	public void apagarDados() {
+		//dbUnitProvider.execute(DatabaseOperation.DELETE_ALL, "Categoria.xml");
+	}
 }
+
+
