@@ -13,6 +13,7 @@ import com.marcosjorge.projetojweb.domain.Cidade;
 import com.marcosjorge.projetojweb.domain.Cliente;
 import com.marcosjorge.projetojweb.domain.Endereco;
 import com.marcosjorge.projetojweb.domain.Estado;
+import com.marcosjorge.projetojweb.domain.ItemPedido;
 import com.marcosjorge.projetojweb.domain.Pagamento;
 import com.marcosjorge.projetojweb.domain.PagamentoBoleto;
 import com.marcosjorge.projetojweb.domain.PagamentoCartao;
@@ -25,6 +26,7 @@ import com.marcosjorge.projetojweb.repositories.RepoCidade;
 import com.marcosjorge.projetojweb.repositories.RepoCliente;
 import com.marcosjorge.projetojweb.repositories.RepoEndereco;
 import com.marcosjorge.projetojweb.repositories.RepoEstado;
+import com.marcosjorge.projetojweb.repositories.RepoItemPedido;
 import com.marcosjorge.projetojweb.repositories.RepoPagamento;
 import com.marcosjorge.projetojweb.repositories.RepoPedido;
 import com.marcosjorge.projetojweb.repositories.RepoProduto;
@@ -47,6 +49,8 @@ public class ProjetojwebApplication implements CommandLineRunner {
 	private RepoPedido repoPed;
 	@Autowired
 	private RepoPagamento repoPag;
+	@Autowired
+	private RepoItemPedido repoItemPed;
 	
 	
 	public static void main(String[] args) {
@@ -83,7 +87,12 @@ public class ProjetojwebApplication implements CommandLineRunner {
 		Pedido ped1 = new Pedido(null,sdf.parse("30/09/2017 10:32"),cli1,e1);
 		Pedido ped2 = new Pedido(null,sdf.parse("26/10/2019 14:55"),cli3,e2);
 		Pedido ped3 = new Pedido(null,sdf.parse("25/10/2019 18:01"),cli2,e1);
-			
+		
+		ItemPedido iped1 = new ItemPedido(ped1,prod1,0.00,5,200.00);
+		ItemPedido iped2 = new ItemPedido(ped1,prod1,25.00,1,30.00);
+		ItemPedido iped3 = new ItemPedido(ped2,prod2,0.00,2,99.99);
+		ItemPedido iped4 = new ItemPedido(ped3,prod3,0.00,2,160.00);
+		
 		cat1.getProdutos().addAll(Arrays.asList(prod1,prod2,prod3));
 		cat2.getProdutos().addAll(Arrays.asList(prod2));
 		
@@ -124,6 +133,13 @@ public class ProjetojwebApplication implements CommandLineRunner {
 		
 		repoPed.saveAll(Arrays.asList(ped1,ped2,ped3));
 		repoPag.saveAll(Arrays.asList(pgto1,pgto1));	
+		
+		ped1.getItens().addAll(Arrays.asList(iped1,iped2));
+		ped2.getItens().addAll(Arrays.asList(iped3));
+		ped3.getItens().addAll(Arrays.asList(iped4));
+		
+		repoItemPed.saveAll(Arrays.asList(iped1,iped2,iped3,iped4));
+		
 	}
 
 }
