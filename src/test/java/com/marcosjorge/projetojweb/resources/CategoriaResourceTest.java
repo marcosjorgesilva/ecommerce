@@ -11,7 +11,7 @@ public class CategoriaResourceTest {
 	@Test
 	public void testeCategoriaResource() {
 		CategoriaService cs = new CategoriaService();
-		Assert.assertThat(cs.buscar(1),CoreMatchers.is("Feminino"));
+		Assert.assertThat(cs.find(1),CoreMatchers.is("Feminino"));
 	}
 
 }
