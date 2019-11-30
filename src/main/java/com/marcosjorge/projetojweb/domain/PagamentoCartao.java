@@ -2,9 +2,11 @@ package com.marcosjorge.projetojweb.domain;
 
 import javax.persistence.Entity;
 
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.marcosjorge.projetojweb.domain.enums.StatusPagamento;
 
 @Entity
+@JsonTypeName("pagamentoCartao")
 public class PagamentoCartao extends Pagamento{
 	private static final long serialVersionUID = 1L;
 	

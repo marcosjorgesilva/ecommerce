@@ -65,6 +65,14 @@ public class ProjetojwebApplication implements CommandLineRunner {
 		Produto prod1 = new Produto(null, "Camisa", 40.00);
 		Produto prod2 = new Produto(null, "Blusa", 49.99);
 		Produto prod3 = new Produto(null, "Jaqueta", 80.00);
+		Produto prod4 = new Produto(null, "Bermuda", 40.00);
+		Produto prod5 = new Produto(null, "Cinto", 50.00);
+		Produto prod6 = new Produto(null, "Blaser", 200.00);
+		Produto prod7 = new Produto(null, "Sueter", 120.00);
+		Produto prod8 = new Produto(null, "Calça Social", 80.00);
+		Produto prod9 = new Produto(null, "Calça Jeans", 100.00);
+		Produto prod10 = new Produto(null, "Camisa Social", 110.00);
+		Produto prod11 = new Produto(null, "Camisa Polo", 90.00);
 		
 		Estado est1 = new Estado(null,"Sao Paulo");
 		Estado est2 = new Estado(null,"Pernambuco");
@@ -89,19 +97,28 @@ public class ProjetojwebApplication implements CommandLineRunner {
 		Pedido ped3 = new Pedido(null,sdf.parse("25/10/2019 18:01"),cli2,e1);
 		
 		ItemPedido iped1 = new ItemPedido(ped1,prod1,0.00,5,200.00);
-		ItemPedido iped2 = new ItemPedido(ped1,prod1,25.00,1,30.00);
+		ItemPedido iped2 = new ItemPedido(ped1,prod1,25.00,4,30.00);
 		ItemPedido iped3 = new ItemPedido(ped2,prod2,0.00,2,99.99);
 		ItemPedido iped4 = new ItemPedido(ped3,prod3,0.00,2,160.00);
 		
-		cat1.getProdutos().addAll(Arrays.asList(prod1,prod2,prod3));
-		cat2.getProdutos().addAll(Arrays.asList(prod2));
+		cat1.getProdutos().addAll(Arrays.asList(prod1,prod2,prod3,prod6,prod9));
+		cat2.getProdutos().addAll(Arrays.asList(prod4,prod5,prod7,prod8,prod10,prod11));
 		
 		prod1.getCategorias().addAll(Arrays.asList(cat1));
-		prod2.getCategorias().addAll(Arrays.asList(cat1,cat2));
-		prod3.getCategorias().addAll(Arrays.asList(cat1));
-		
+		prod2.getCategorias().addAll(Arrays.asList(cat2));
+		prod3.getCategorias().addAll(Arrays.asList(cat1));	
+		prod4.getCategorias().addAll(Arrays.asList(cat2));
+		prod5.getCategorias().addAll(Arrays.asList(cat2));
+		prod6.getCategorias().addAll(Arrays.asList(cat1));	
+		prod7.getCategorias().addAll(Arrays.asList(cat2));
+		prod8.getCategorias().addAll(Arrays.asList(cat2));
+		prod9.getCategorias().addAll(Arrays.asList(cat1));
+		prod10.getCategorias().addAll(Arrays.asList(cat2));	
+		prod11.getCategorias().addAll(Arrays.asList(cat2));
+			
 		repoCateg.saveAll(Arrays.asList(cat1,cat2));
-		repoProd.saveAll(Arrays.asList(prod1,prod2,prod3));
+		
+		repoProd.saveAll(Arrays.asList(prod1,prod2,prod3,prod4,prod5,prod6,prod7,prod8,prod9,prod10,prod11));
 		
 		est1.getCidades().addAll(Arrays.asList(c1));	
 		est2.getCidades().addAll(Arrays.asList(c3,c4));
