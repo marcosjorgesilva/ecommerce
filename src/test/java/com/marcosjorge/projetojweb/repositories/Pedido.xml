@@ -1,9 +1,5 @@
-<?xml version="1.0" encoding = "UTF-8"?>
+<?xml version="1.0" encoding = "utf-8"?>
 
 <dataset>
-	<Categoria Nome="polos"/>
-	<Categoria Nome="cuecas"/>
-	<Categoria Nome="casacos e jaquetas"/>
-	<Categoria Nome="calcas"/>
-	<Categoria Nome="calcas jeans"/>
+	<Pedido id="" dataPedido="30/10/2019" cliente="1" enderecoEntrega="1"/>
 </dataset>

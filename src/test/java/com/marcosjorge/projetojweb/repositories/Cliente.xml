@@ -1,9 +1,5 @@
-<?xml version="1.0" encoding = "UTF-8"?>
-
+<?xml version="1.0" encoding = "utf-8"?>
+		
 <dataset>
-	<Categoria Nome="polos"/>
-	<Categoria Nome="cuecas"/>
-	<Categoria Nome="casacos e jaquetas"/>
-	<Categoria Nome="calcas"/>
-	<Categoria Nome="calcas jeans"/>
+	<Cliente id ="" nome ="Jorge Topazzo" email ="t.jorge@hotmail.com.br" cpfOuCnpj ="95702706080" tipo="1"/>
 </dataset>

@@ -1,9 +1,9 @@
 package com.marcosjorge.projetojweb.repositories;
 
-import static org.junit.Assert.*;
-
 import org.dbunit.operation.DatabaseOperation;
-import org.junit.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 import dbUnit.DbUnitProvider;
 
@@ -24,7 +24,7 @@ public class RepoCategoriaTest {
 
 	@After 
 	public void apagarDados() {
-		//dbUnitProvider.execute(DatabaseOperation.DELETE_ALL, "Categoria.xml");
+		dbUnitProvider.execute(DatabaseOperation.DELETE_ALL, "Categoria.xml");
 	}
 }
 

@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding = "utf-8"?>
 
 <dataset>
-	<Cidade id="1" nome="recife"/>
-	<Cidade id="2" nome="são paulo"/>
-	<Cidade id="3" nome="rio de janeiro"/>
-	<Cidade id="4" nome="urbelandia"/>
-	<Cidade id="5" nome="manaus"/>
+	<Cidade id="" nome="recife"/>
 </dataset>
